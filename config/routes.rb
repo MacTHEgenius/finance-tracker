@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   
   get 'portfolio', to: "users#portfolio"
+  get 'friends', to: "users#friends"
   
   get 'search_stocks', to: "stocks#search"
   
