@@ -28,4 +28,18 @@ class User < ActiveRecord::Base
     return false unless stock
     user_stocks.where(stock_id: stock.id).exists?
   end
+  
+  def not_friends_with?(friend_id)
+    friendships.where(friend_id: friend_id).count < 1
+  end
+  
+  def except_current_user(users)
+    users.reject { |user| user.id == self.id }
+  end
+  
+  # search
+  
+  def self.search(param)
+    
+  end
 end
